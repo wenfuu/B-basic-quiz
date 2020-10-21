@@ -11,8 +11,8 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("/users")
 public class UserController {
-    public final UserService userService;
 
+    public final UserService userService;
 
     public UserController(UserService userService) {
         this.userService = userService;
@@ -24,7 +24,7 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.CREATED).body(user.getId());
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public User findUserById(@PathVariable Long id) {
         return userService.findUserById(id);
     }

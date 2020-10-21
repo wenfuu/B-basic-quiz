@@ -4,14 +4,13 @@ import lombok.*;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
 
-    @Setter
-    @Getter
     private Long id;
     @Size(min = 1, max = 128, message = "invalid name")
     private String name;
@@ -21,4 +20,5 @@ public class User {
     private String avatar;
     @Size(max = 1024, message = "invalid description")
     private String description;
+    private List<Education> educations;
 }
