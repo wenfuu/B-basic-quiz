@@ -13,6 +13,7 @@ import java.util.Objects;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(UserNotFoundException.class)
+    //TODO GTB-知识点: - GlobalExceptionHandler.java:16 不需要再包一层ResponseEntity，且status code重复设置了
     public ResponseEntity<ErrorResult> handle(UserNotFoundException ex) {
         String timeStamp = new Date().toString();
         Integer status = HttpStatus.NOT_FOUND.value();

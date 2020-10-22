@@ -19,6 +19,7 @@ public class UserController {
     }
 
     @PostMapping
+    //TODO GTB-知识点: - UserController.java:22，ResponseEntity可以省略掉
     public ResponseEntity<Long> createUser(@RequestBody @Valid User user) {
         userService.createUser(user);
         return ResponseEntity.status(HttpStatus.CREATED).body(user.getId());
